@@ -1,5 +1,27 @@
 import os
 
+class Pessoa:
+    def __init__(self, nome, idade, email):
+        self.nome = nome
+        self.idade = idade
+        self.email = email
+
+
+class Medico(Pessoa):
+    def __init__(self, especialidade):
+        especialidade = self.especialidade
+    def atender():
+        print('Atendendo')
+
+
+
+class Paciente(Pessoa):
+    def __init__(self, historico):
+        historico = self.historico
+    def marcar_consulta():
+
+
+
 class Consulta:
     def __init__(self, data, paciente, medico):
         self.data = data
@@ -27,6 +49,7 @@ class Consulta:
 # ============================
 
 medicos = []
+especialidades = []
 pacientes = []
 consultas = []
 
@@ -49,11 +72,19 @@ while True:
     # Cadastrar Médico
     if opcao == "1":
         ####### CRIE O CÓDIGO PARA CADASTRAR MÉDICO
+        nome = input('Nome do médico: ')
+        medicos.append(nome)
+
+       
+
         print("Médico cadastrado com sucesso!\n")
 
     # Cadastrar Paciente
     elif opcao == "2":
         ####### CRIE O CÓDICO PARA CADASTRAR PACIENTE
+        
+
+
         print("Paciente cadastrado com sucesso!\n")
 
     # Listar Médicos
@@ -65,6 +96,8 @@ while True:
     # Listar Pacientes
     elif opcao == "4":
         ####### CRIE O CÓDIGO PARA LISTAR PACIENTES
+        for i, p in enumerate(pacientes):
+            print(f"{i} - {p.exibir_info}")
         print()
 
     # Marcar Consulta
@@ -90,6 +123,8 @@ while True:
     # Listar Consultas
     elif opcao == "6":
         ###### CRIE O CÓDIGO PARA LISTAR AS CONSULTAS
+        for i, c in enumerate consultas:
+            print(f"{i} - {c}")
         print()
 
     # Registrar Diagnóstico
